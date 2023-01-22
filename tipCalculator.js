@@ -14,6 +14,7 @@ var classes = {
     tipPercent15: 'tip-percent-15',
     tipPercent25: 'tip-percent-25',
     tipPercent50: 'tip-percent-50',
+    tipPercentStyles: 'tip-percent-styles',
     tipPercentP: 'tip-percent-p',
     custom: 'custom',
     customP: 'custom-p',
@@ -26,7 +27,6 @@ var classes = {
     reset: 'reset',
     resetP: 'reset-p',
     total: 'total',
-    inputDollarP: 'input-dollar-p',
     inputBill: 'input-bill',
     inputPeople: 'input-people',
     billCantBe: 'bill-cant-be',
@@ -144,6 +144,8 @@ function setStyle () {
         'outline: none;' +
         'border-radius: 5px;' +
         'text-align: right;' +
+        'caret-color: #20C4AB;' +
+        'font-size: 20px;' +
         'color: #00474B;' +
         '}' +
     selectors.inputPeople + ':hover {' +
@@ -160,7 +162,7 @@ function setStyle () {
         'flex-wrap: wrap;' +
         'justify-content: space-between;' +
         '}' +
-    selectors.tipPercent5 + '{' +
+    selectors.tipPercentStyles + '{' +
         'width: 115px;' +
         'height: 45px;' +
         'display: flex;' +
@@ -169,59 +171,7 @@ function setStyle () {
         'border-radius: 5px;' +
         'background-color: #00474B;' +
         '}' +
-    selectors.tipPercent5 + ':hover {' +
-        'cursor: pointer;' +
-        'background-color: #20C4AB;' +
-        '}' +
-    selectors.tipPercent10 + '{' +
-        'width: 115px;' +
-        'height: 45px;' +
-        'display: flex;' +
-        'justify-content: center;' +
-        'align-items: center;' +
-        'border-radius: 5px;' +
-        'background-color: #00474B;' +
-        '}' +
-    selectors.tipPercent10 + ':hover {' +
-        'cursor: pointer;' +
-        'background-color: #20C4AB;' +
-        '}' +
-    selectors.tipPercent15 + '{' +
-        'width: 115px;' +
-        'height: 45px;' +
-        'display: flex;' +
-        'justify-content: center;' +
-        'align-items: center;' +
-        'border-radius: 5px;' +
-        'background-color: #00474B;' +
-        '}' +
-    selectors.tipPercent15 + ':hover {' +
-        'cursor: pointer;' +
-        'background-color: #20C4AB;' +
-        '}' +
-    selectors.tipPercent25 + '{' +
-        'width: 115px;' +
-        'height: 45px;' +
-        'display: flex;' +
-        'justify-content: center;' +
-        'align-items: center;' +
-        'border-radius: 5px;' +
-        'background-color: #00474B;' +
-        '}' +
-    selectors.tipPercent25 + ':hover {' +
-        'cursor: pointer;' +
-        'background-color: #20C4AB;' +
-        '}' +
-    selectors.tipPercent50 + '{' +
-        'width: 115px;' +
-        'height: 45px;' +
-        'display: flex;' +
-        'justify-content: center;' +
-        'align-items: center;' +
-        'border-radius: 5px;' +
-        'background-color: #00474B;' +
-        '}' +
-    selectors.tipPercent50 + ':hover {' +
+    selectors.tipPercentStyles + ':hover {' +
         'cursor: pointer;' +
         'background-color: #20C4AB;' +
         '}' +
@@ -317,7 +267,6 @@ function setHtml () {
     $(selectors.containerDiv).remove();
 
     $('<div/>').addClass(classes.containerDiv).appendTo(classes.body);
-
     
     var htmlContent =
     '<div class="' + classes.titleDiv + '">' +
@@ -338,19 +287,19 @@ function setHtml () {
             '</div>' +
             '<div class="' + classes.billCantBe + '">' +
                 '<p class="' + classes.divLeftP + '">Select Tip %</p>' +
-                '<p class="' + classes.cantBe3 + '"></p>' +
+                '<p class="' + classes.cantBe2 + '"></p>' +
             '</div>' +
             '<div class="' + classes.selectTip + '">' +
-                '<div class="' + classes.tipPercent5 + '"><p class="' + classes.tipPercentP + '">5%</p></div>' +
-                '<div class="' + classes.tipPercent10 + '"><p class="' + classes.tipPercentP + '">10%</p></div>' +
-                '<div class="' + classes.tipPercent15 + '"><p class="' + classes.tipPercentP + '">15%</p></div>' +
-                '<div class="' + classes.tipPercent25 + '"><p class="' + classes.tipPercentP + '">25%</p></div>' +
-                '<div class="' + classes.tipPercent50 + '"><p class="' + classes.tipPercentP + '">50%</p></div>' +
+                '<div class="' + classes.tipPercent5 + ' ' + classes.tipPercentStyles + '"><p class="' + classes.tipPercentP + '">5%</p></div>' +
+                '<div class="' + classes.tipPercent10 + ' ' + classes.tipPercentStyles + '"><p class="' + classes.tipPercentP + '">10%</p></div>' +
+                '<div class="' + classes.tipPercent15 + ' ' + classes.tipPercentStyles + '"><p class="' + classes.tipPercentP + '">15%</p></div>' +
+                '<div class="' + classes.tipPercent25 + ' ' + classes.tipPercentStyles + '"><p class="' + classes.tipPercentP + '">25%</p></div>' +
+                '<div class="' + classes.tipPercent50 + ' ' + classes.tipPercentStyles + '"><p class="' + classes.tipPercentP + '">50%</p></div>' +
                 '<input class="' + classes.custom + '" type="text" placeholder="Custom">' +            
             '</div>' +
             '<div class="' + classes.billCantBe + '">' +
                 '<p class="' + classes.divLeftP + '">Number of People</p>' +
-                '<p class="' + classes.cantBe2 + '"></p>' +
+                '<p class="' + classes.cantBe3 + '"></p>' +
             '</div>' +
             '<div class="' + classes.people + '">' +
                 '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="16"><path fill="#9EBBBD" d="M9.573 7.729c.406 0 .784.07 1.126.209.342.14.639.33.881.569.232.227.438.503.614.82a5.1 5.1 0 01.407.949c.097.312.178.654.242 1.016.062.359.105.699.126 1.011.02.307.031.624.031.945 0 .836-.259 1.512-.768 2.01-.504.492-1.17.742-1.98.742H2.748c-.81 0-1.477-.25-1.98-.742C.259 14.76 0 14.084 0 13.248c0-.322.01-.64.032-.945.02-.312.063-.652.126-1.01.063-.363.144-.705.242-1.017.1-.323.238-.643.407-.948.176-.318.382-.594.613-.821.243-.238.54-.43.882-.57.342-.138.72-.208 1.125-.208.16 0 .313.067.61.265.183.123.397.264.636.421.204.134.48.259.822.372.333.11.671.167 1.005.167a3.19 3.19 0 001.006-.167c.341-.113.618-.238.822-.372l.636-.42c.296-.2.45-.266.61-.266zM6.598 0C7.63 0 8.522.38 9.252 1.129s1.1 1.666 1.1 2.724c0 1.06-.37 1.976-1.1 2.725-.73.75-1.623 1.13-2.654 1.13-1.03 0-1.924-.38-2.653-1.13-.73-.749-1.1-1.666-1.1-2.725 0-1.058.37-1.975 1.1-2.724C4.675.379 5.567 0 6.598 0z"/></svg>' +
@@ -391,8 +340,8 @@ var peopleVal;
 function enterKey () {
 
     function keyCode13 (){
-        billVal = Math.round(parseFloat($(selectors.inputBill)[0].value)*100)/100;
-        peopleVal = Math.round(parseFloat($(selectors.inputPeople)[0].value)*100)/100;
+        billVal = $(selectors.inputBill)[0].value;
+        peopleVal = $(selectors.inputPeople)[0].value;
 
         if($(selectors.custom)[0].value !== ''){
             customVal = Math.round(parseFloat($(selectors.custom)[0].value)*100)/100;
@@ -407,7 +356,7 @@ function enterKey () {
             $(selectors.bill).css('border' , '2px solid #FF7C7C');
         }
         if(peopleVal === ''){
-            $(selectors.cantBe2).html("Can't be zero");
+            $(selectors.cantBe3).html("Can't be zero");
             $(selectors.people).css('border' , '2px solid #FF7C7C');
         }
         if(isNaN(billVal)){
@@ -415,11 +364,11 @@ function enterKey () {
             $(selectors.bill).css('border' , '2px solid #FF7C7C');
         }
         if(isNaN(customVal)){
-            $(selectors.cantBe3).html("Should be number");
+            $(selectors.cantBe2).html("Should be number");
             $(selectors.custom).css('border' , '2px solid #FF7C7C');
         }
         if(isNaN(peopleVal)){
-            $(selectors.cantBe2).html("Should be number");
+            $(selectors.cantBe3).html("Should be number");
             $(selectors.people).css('border' , '2px solid #FF7C7C');
         }
 
@@ -430,6 +379,9 @@ function enterKey () {
             billVal !== '' &&
             peopleVal !== ''
         ){
+            billVal = Math.round(parseFloat($(selectors.inputBill)[0].value)*100)/100;
+            peopleVal = Math.round(parseFloat($(selectors.inputPeople)[0].value)*100)/100;
+
             $(selectors.count1).html('$'+((billVal/100*customVal)/peopleVal).toFixed(2));
             $(selectors.count2).html('$'+ ((billVal+(billVal/100*customVal))/peopleVal).toFixed(2));
 
